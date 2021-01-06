@@ -8,4 +8,8 @@ public class MyLinkedList
     head = null;
     tail = null;
   }
+  public int size()
+  {
+    return size;
+  }
 }
