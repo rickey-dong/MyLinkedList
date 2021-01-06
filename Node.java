@@ -16,4 +16,12 @@ public class Node
   {
     data = newData;
   }
+  public Node getNext()
+  {
+    return next;
+  }
+  public void setNext(Node newNext)
+  {
+    next = newNext;
+  }
 }
