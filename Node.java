@@ -12,8 +12,8 @@ public class Node
   {
     return data;
   }
-  //public String setData(String newData)
-  //{
-    
-  //}
+  public void setData(String newData)
+  {
+    data = newData;
+  }
 }
