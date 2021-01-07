@@ -130,4 +130,37 @@ public class MyLinkedList
     sLL += "]";
     return sLL;
   }
+  public String remove(int index)
+  {
+    if (index < 0 || index >= size())
+    {
+      throw new IndexOutOfBoundsException("index " + index + " is out of bounds.");
+    }
+    String returnThisRemoved = getNthNode(index+1).getData();
+    if (size() == 1)
+    {
+      head = new Node(null);
+      tail = new Node(null);
+      size--;
+    }
+    else if (index == 0)
+    {
+      head.getNext().setPrev(null);
+      head = head.getNext();
+      size--;
+    }
+    else if (index == size() - 1)
+    {
+      tail.getPrev().setNext(null);
+      tail = tail.getPrev();
+      size--;
+    }
+    else
+    {
+      getNthNode(index+1).getPrev().setNext(getNthNode(index+1).getNext());
+      getNthNode(index+1).getNext().setPrev(getNthNode(index+1).getPrev());
+      size--;
+    }
+    return returnThisRemoved;
+  }
 }
