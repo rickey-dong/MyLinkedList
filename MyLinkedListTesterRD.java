@@ -56,5 +56,8 @@ public class MyLinkedListTesterRD
     chainOfNumbers.add(0, "negativo uno");
     System.out.println(chainOfNumbers.toString() + " should be [negative uno, uno, tres, dos]");
     System.out.println(chainOfNumbers.get(0) + " should be negativo uno");
+    System.out.println(chainOfNumbers.size() + " should be 4");
+    System.out.println();
+    //chainOfNumbers.verify();
   }
 }

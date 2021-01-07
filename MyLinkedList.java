@@ -103,4 +103,15 @@ public class MyLinkedList
     }
     return current;
   }
+  //public void verify()
+//  {
+    //Node current = head;
+    //for (int i = 0; i < size(); i++)
+    //{
+      //System.out.println(current.getPrev() + " should be a reference");
+      //System.out.println(current.getData() + " should be a String");
+    //  System.out.println(current.getNext() + " should be a reference");
+      //current = current.getNext();
+    //}
+  //}
 }
