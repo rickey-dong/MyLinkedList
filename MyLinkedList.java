@@ -114,4 +114,20 @@ public class MyLinkedList
       //current = current.getNext();
     //}
   //}
+  public String toStringReversed()
+  {
+    String sLL = "[";
+    Node current = tail;
+    while (current != null)
+    {
+      sLL += current.getData();
+      if (current.getPrev() != null)
+      {
+        sLL += ", ";
+      }
+      current = current.getPrev();
+    }
+    sLL += "]";
+    return sLL;
+  }
 }
