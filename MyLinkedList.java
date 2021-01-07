@@ -78,6 +78,22 @@ public class MyLinkedList
     getNthNode(index+1).setData(value);
     return replacedValue;
   }
+  public String toString()
+  {
+    String stringLinkedList = "[";
+    Node current = head;
+    while (current != null)
+    {
+      stringLinkedList += current.getData();
+      if (current.getNext() != null)
+      {
+        stringLinkedList += ", ";
+      }
+      current = current.getNext();
+    }
+    stringLinkedList += "]";
+    return stringLinkedList;
+  }
   private Node getNthNode(int n)
   {
     Node current = head;
