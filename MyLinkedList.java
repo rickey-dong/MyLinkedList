@@ -68,6 +68,16 @@ public class MyLinkedList
     }
     return getNthNode(index+1).getData();
   }
+  public String set(int index, String value)
+  {
+    if (index < 0 || index >= size())
+    {
+      throw new IndexOutOfBoundsException("index " + index + " is out of bounds.");
+    }
+    String replacedValue = getNthNode(index+1).getData();
+    getNthNode(index+1).setData(value);
+    return replacedValue;
+  }
   private Node getNthNode(int n)
   {
     Node current = head;
