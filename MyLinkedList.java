@@ -163,4 +163,8 @@ public class MyLinkedList
     }
     return returnThisRemoved;
   }
+  public void extend(MyLinkedList other)
+  {
+    Node thisTail = this.tail;
+  }
 }
