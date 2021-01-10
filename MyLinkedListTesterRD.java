@@ -58,6 +58,25 @@ public class MyLinkedListTesterRD
     System.out.println(chainOfNumbers.get(0) + " should be negativo uno");
     System.out.println(chainOfNumbers.size() + " should be 4");
     System.out.println();
+    System.out.println();
     //chainOfNumbers.verify();
+    MyLinkedList aK = new MyLinkedList();
+    MyLinkedList bK = new MyLinkedList();
+    for(int i = 0; i < 10; i++){
+      if(i < 5){
+        aK.add(i+"");
+      }else{
+        bK.add(i+"");
+      }
+    }
+    System.out.println();
+    System.out.println("A:"+aK+aK.size());
+    System.out.println("B:"+bK+bK.size());
+
+    aK.extend(bK);
+    System.out.println("A:"+aK+aK.size());
+    System.out.println("B:"+bK+bK.size());
+    System.out.println("A reversed:"+aK.toStringReversed()+aK.size());
+    System.out.println("B reversed:"+bK.toStringReversed()+bK.size());
   }
 }

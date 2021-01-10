@@ -165,6 +165,64 @@ public class MyLinkedList
   }
   public void extend(MyLinkedList other)
   {
-    Node thisTail = this.tail;
+    if (size() == 0 && other.size() == 0) //when both are empty
+    {
+      this.head = new Node(null);
+      this.tail = new Node(null);
+    }
+    else if (size() != 0 && other.size() == 0) //when other is empty
+    {
+      this.head = this.head;
+      this.tail = this.tail;
+    }
+    else if (size() == 0 && other.size() != 0) //when this is empty
+    {
+      this.head = other.head;
+      this.tail = other.tail;
+      this.size += other.size();
+      other.size = 0;
+      other.head = null;
+      other.tail = null;
+    }
+    else if (size() == 1 && other.size() == 1) //when both are size 1
+    {
+      this.head.setNext(other.head);
+      other.head.setPrev(this.head);
+      this.tail = other.head;
+      this.size += 1;
+      other.size = 0;
+      other.head = null;
+      other.tail = null;
+    }
+    else if (size() != 1 && other.size() == 1) //when other is size 1
+    {
+      this.tail.setNext(other.head);
+      other.head.setPrev(this.tail);
+      this.tail = other.head;
+      this.size += 1;
+      other.size = 0;
+      other.head = null;
+      other.tail = null;
+    }
+    else if (size() == 1 && other.size() != 1) //when this is size 1
+    {
+      this.head.setNext(other.head);
+      other.head.setPrev(this.head);
+      this.tail = other.tail;
+      this.size += other.size();
+      other.size = 0;
+      other.head = null;
+      other.tail = null;
+    }
+    else //when both are size 2+
+    {
+      this.tail.setNext(other.head);
+      other.head.setPrev(this.tail);
+      this.tail = other.tail;
+      this.size += other.size();
+      other.size = 0;
+      other.head = null;
+      other.tail = null;
+    }
   }
 }
