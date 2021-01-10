@@ -5,8 +5,8 @@ public class MyLinkedList
   public MyLinkedList()
   {
     size = 0;
-    head = new Node(null);
-    tail = new Node(null);
+    head = null;
+    tail = null;
   }
   public int size()
   {
@@ -139,8 +139,8 @@ public class MyLinkedList
     String returnThisRemoved = getNthNode(index+1).getData();
     if (size() == 1)
     {
-      head = new Node(null);
-      tail = new Node(null);
+      head = null;
+      tail = null;
       size--;
     }
     else if (index == 0)
@@ -156,9 +156,10 @@ public class MyLinkedList
       size--;
     }
     else
-    {
-      getNthNode(index+1).getPrev().setNext(getNthNode(index+1).getNext());
-      getNthNode(index+1).getNext().setPrev(getNthNode(index+1).getPrev());
+    { //[1,3,5]
+      Node removeThisNode = getNthNode(index + 1);
+      removeThisNode.getPrev().setNext(removeThisNode.getNext());
+      removeThisNode.getNext().setPrev(removeThisNode.getPrev());
       size--;
     }
     return returnThisRemoved;

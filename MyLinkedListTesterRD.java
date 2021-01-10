@@ -78,5 +78,41 @@ public class MyLinkedListTesterRD
     System.out.println("B:"+bK+bK.size());
     System.out.println("A reversed:"+aK.toStringReversed()+aK.size());
     System.out.println("B reversed:"+bK.toStringReversed()+bK.size());
+    System.out.println();
+    System.out.println();
+    System.out.println();
+    MyLinkedList betterChain = new MyLinkedList();
+    System.out.println(betterChain.size() + " should be 0");
+    System.out.println(betterChain + " should be []");
+    betterChain.add("yi");
+    System.out.println(betterChain + " should be [yi]");
+    betterChain.add("er");
+    System.out.println(betterChain + " should be [yi, er]");
+    betterChain.remove(1);
+    System.out.println(betterChain + " should be [yi]");
+    betterChain.remove(0);
+    System.out.println(betterChain + " should be []");
+    betterChain.add("yi"); //tail and head are yi
+    betterChain.add("er"); //tail is er head is yi
+    betterChain.add("san");//tail is san head is yi
+    betterChain.add("si");//tail is si head is yi
+    System.out.println(betterChain.size() + " should be 4");
+    System.out.println(betterChain + " should be [yi, er, san, si]");
+    System.out.println();
+    System.out.println(betterChain.remove(1) + " should be er");
+    System.out.println(betterChain.size() + " should be 3");
+    System.out.println(betterChain + " should be [yi, san, si]");
+    System.out.println();
+    System.out.println(betterChain.remove(2) + " should be si");
+    System.out.println(betterChain.size() + " should be 2");
+    System.out.println(betterChain + " should be [yi, san]"); //PROBLEM PROBLEM PROBLEM
+    System.out.println();
+    System.out.println(betterChain.remove(0) + " should be yi");
+    System.out.println(betterChain.size() + " should be 1");
+    System.out.println(betterChain + " should be [san]");
+    System.out.println();
+    System.out.println(betterChain.remove(0) + " should be san");
+    System.out.println(betterChain.size() + " should be 0");
+    System.out.println(betterChain + " should be []");
   }
 }
