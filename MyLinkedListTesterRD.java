@@ -92,10 +92,10 @@ public class MyLinkedListTesterRD
     System.out.println(betterChain + " should be [yi]");
     betterChain.remove(0);
     System.out.println(betterChain + " should be []");
-    betterChain.add("yi"); //tail and head are yi
-    betterChain.add("er"); //tail is er head is yi
-    betterChain.add("san");//tail is san head is yi
-    betterChain.add("si");//tail is si head is yi
+    betterChain.add("yi");
+    betterChain.add("er");
+    betterChain.add("san");
+    betterChain.add("si");
     System.out.println(betterChain.size() + " should be 4");
     System.out.println(betterChain + " should be [yi, er, san, si]");
     System.out.println();
@@ -105,7 +105,7 @@ public class MyLinkedListTesterRD
     System.out.println();
     System.out.println(betterChain.remove(2) + " should be si");
     System.out.println(betterChain.size() + " should be 2");
-    System.out.println(betterChain + " should be [yi, san]"); //PROBLEM PROBLEM PROBLEM
+    System.out.println(betterChain + " should be [yi, san]"); 
     System.out.println();
     System.out.println(betterChain.remove(0) + " should be yi");
     System.out.println(betterChain.size() + " should be 1");
@@ -113,6 +113,9 @@ public class MyLinkedListTesterRD
     System.out.println();
     System.out.println(betterChain.remove(0) + " should be san");
     System.out.println(betterChain.size() + " should be 0");
+    System.out.println(betterChain + " should be []");
+    MyLinkedList emptyChain = new MyLinkedList();
+    betterChain.extend(emptyChain);
     System.out.println(betterChain + " should be []");
   }
 }

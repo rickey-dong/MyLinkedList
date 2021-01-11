@@ -168,8 +168,8 @@ public class MyLinkedList
   {
     if (size() == 0 && other.size() == 0) //when both are empty
     {
-      this.head = new Node(null);
-      this.tail = new Node(null);
+      this.head = null;
+      this.tail = null;
     }
     else if (size() != 0 && other.size() == 0) //when other is empty
     {
